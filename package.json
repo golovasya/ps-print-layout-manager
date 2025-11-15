@@ -1,0 +1,15 @@
+{
+  "name": "print-layout-manager",
+  "version": "1.0.0",
+  "description": "Photoshop UXP plugin for managing print layouts with Excel integration",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "keywords": ["photoshop", "uxp", "plugin", "print", "layout", "excel"],
+  "author": "",
+  "license": "MIT"
+}

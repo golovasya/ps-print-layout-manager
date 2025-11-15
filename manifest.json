@@ -1,0 +1,42 @@
+{
+  "id": "photoshop.print.layout.manager",
+  "name": "Print Layout Manager",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.0.0"
+    }
+  ],
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "printLayoutPanel",
+      "label": {
+        "default": "Print Layout Manager"
+      },
+      "minimumSize": {
+        "width": 300,
+        "height": 400
+      },
+      "maximumSize": {
+        "width": 800,
+        "height": 1200
+      },
+      "preferredDockedSize": {
+        "width": 350,
+        "height": 600
+      },
+      "preferredFloatingSize": {
+        "width": 400,
+        "height": 700
+      }
+    }
+  ],
+  "requiredPermissions": [
+    "allowCodeGenerationFromStrings",
+    "localFileSystem",
+    "launchProcess",
+    "network"
+  ]
+}
