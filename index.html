@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Print Layout Manager</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            padding: 16px;
+            background: #2d2d2d;
+            color: #e0e0e0;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #3a3a3a;
+            border-radius: 6px;
+        }
+        h3 { font-size: 14px; margin-bottom: 10px; color: #fff; }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #0d66d0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        button:hover { background: #095cb8; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        .print-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background: #2a2a2a;
+        }
+        .print-item {
+            padding: 12px;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .print-item:hover { background: #353535; }
+        .print-item.selected { background: #0d66d0; }
+        .print-item-photo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 12px;
+            background: #444;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .print-item-info { flex: 1; }
+        .print-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+        .print-item-article { font-weight: bold; font-size: 13px; }
+        .print-item-size { font-size: 12px; color: #aaa; }
+        .print-item-details { font-size: 11px; color: #999; margin-top: 4px; }
+        .size-input {
+            width: 100%;
+            padding: 6px;
+            background: #2a2a2a;
+            border: 1px solid #555;
+            border-radius: 3px;
+            color: #e0e0e0;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .info-text { font-size: 11px; color: #888; margin-top: 8px; }
+        #statusText {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 8px;
+            padding: 8px;
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h3>1. Загрузить таблицу XLSX</h3>
+        <button id="loadExcelBtn">Выбрать файл Excel</button>
+        <div id="statusText">Таблица не загружена</div>
+    </div>
+    <div class="section">
+        <h3>2. Запустить раскладку</h3>
+        <button id="runLayoutBtn" disabled>Запустить скрипт раскладки</button>
+        <div class="info-text">Скрипт разложит принты на листы</div>
+    </div>
+    <div class="section">
+        <h3>3. Управление принтами</h3>
+        <div id="printsList" class="print-list">
+            <div style="padding: 20px; text-align: center; color: #888;">
+                Загрузите таблицу для отображения принтов
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
